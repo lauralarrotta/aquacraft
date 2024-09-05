@@ -1,9 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="AquaCraft: Diseño y construcción de piscinas personalizadas. Servicios de alta calidad y atención al cliente excepcional.">
+    <link rel="canonical" href="https://www.aquacraft.com/">
+    <meta property="og:title" content="AquaCraft - Diseño y Construcción de Piscinas">
+    <meta property="og:description"
+        content="Diseñamos y construimos piscinas personalizadas de alta calidad. Servicios profesionales y atención al cliente excepcional.">
+    <meta property="og:image" content="https://www.aquacraft.com/img/og-image.jpg">
+    <meta property="og:url" content="https://www.aquacraft.com/">
+
+    <link rel="preload" href="css/styles.css" as="style">
+    <link rel="preload" href="css/mediaq.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+        as="style">
+    <link rel="preload" href="https://code.jquery.com/jquery-1.12.4.min.js" as="script">
+    <link rel="preload" href="/public/img/logo.webp" as="image">
+    <link rel="preload" href="/public/img/header.webp" as="image">
+    <link rel="preload" href="/public/img/header2.webp" as="image">
 
     <!-- Enlaces a hojas de estilo -->
     <link rel="stylesheet" href="css/normalize.css">
@@ -32,7 +50,7 @@
         <!-- Navbar -->
         <div class="content flex_space">
             <div class="logo">
-                <a class="logo__link" href="#inicio"><img class="logo__img" src="/public/img/logo.png"
+                <a class="logo__link" href="#inicio"><img class="logo__img" src="/public/img/logo.webp"
                         alt="logo">Art<span class="logo__span">Aqua</span></a>
             </div>
             <div class="navlinks">
@@ -51,7 +69,7 @@
             <div class="carousel-container">
                 <div class="owl-carousel owl-theme">
                     <div class="item">
-                        <img src="/public/img/header.jpeg" alt="">
+                        <img src="/public/img/header.webp" alt="">
                         <div class="text">
                             <h1>¡Comienza a diseñar la piscina de tus sueños ahora mismo!</h1>
                             <h2>Diseñamos Piscinas y Spas Únicos, Adaptados a Tu Estilo y Presupuesto. Aprovecha la
@@ -63,7 +81,7 @@
                         </div>
                     </div>
                     <div class="item">
-                        <img src="/public/img/header2.jpeg" alt="">
+                        <img src="/public/img/header2.webp" alt="">
                         <div class="text">
                             <h1>¡Comienza a diseñar la piscina de tus sueños ahora mismo!</h1>
                             <h2>Diseñamos Piscinas y Spas Únicos, Adaptados a Tu Estilo y Presupuesto. Aprovecha la
@@ -133,7 +151,7 @@
     </section>
     <!-- .Contacto -->
 
-
+    <!-- .Footer -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-logo">
@@ -167,13 +185,20 @@
             <p>&copy; 2024 lauralarrotta. Todos los derechos reservados.</p>
         </div>
     </footer>
+    <!-- .Footer -->
+
+    <!-- scroll-to-top -->
 
     <button id="scrollToTopBtn" class="scroll-to-top-btn"><i class="fa-solid fa-angles-up"></i></button>
 
+    <!-- .scroll-to-top -->
+
+
+    <!-- script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/animation.js"></script>
+    <script src="js/animation.js" defer></script>
     <script src="js/data.js"></script>
     <script src="js/form.js" defer></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
@@ -185,8 +210,6 @@
             });
         })();
     </script>
-
-
 
 </body>
 

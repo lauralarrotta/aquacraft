@@ -18,6 +18,8 @@ document
       function (response) {
         alert("Correo enviado con éxito!", response.status, response.text);
         alert("¡Tu mensaje ha sido enviado correctamente!");
+
+        document.getElementById("contact-form").reset();
       },
       function (error) {
         console.log("Error al enviar el correo...", error);
