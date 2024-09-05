@@ -367,6 +367,14 @@ section.home {
     overflow: hidden;
     width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.gallery-item.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .gallery-item:hover {
@@ -475,6 +483,14 @@ section.home {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.servicio-card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .servicio-card:hover {
@@ -615,27 +631,8 @@ section.home {
     width: 100%;
     padding: 15px;
     background-color: var(--Buttom);
-:root {
-    --Principalfont: 'Poppins', sans-serif;
-    --Secundaryfont: 'Ubuntu', sans-serif;
-    --Primarycolor: #003366;
-    --ButtomText: #fff;
-    --Buttom: #00C4CC;
-    --base-font-size: 16px;
 }
 
-/* Global Styles */
-
-html {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
-}
 
 body {
     position: relative;
@@ -984,6 +981,14 @@ section.home {
     overflow: hidden;
     width: 300px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.gallery-item.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .gallery-item:hover {
@@ -1092,6 +1097,14 @@ section.home {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.servicio-card.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .servicio-card:hover {

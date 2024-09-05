@@ -85,6 +85,27 @@ const servicios = {
       "Brindamos asesoría experta en la elección de diseños y materiales.",
     icono: "fa-comment-dots",
   },
+
+  instalacionCalefaccion: {
+    nombre: "Instalación de Calefacción",
+    descripcion:
+      "Instalamos sistemas de calefacción para que puedas disfrutar de tu piscina durante todo el año.",
+    icono: "fa-fire",
+  },
+
+  automatizacionPiscinas: {
+    nombre: "Automatización de Piscinas",
+    descripcion:
+      "Ofrecemos sistemas de automatización para controlar la temperatura, iluminación y filtración de tu piscina.",
+    icono: "fa-robot",
+  },
+
+  limpiezaProfunda: {
+    nombre: "Limpieza Profunda",
+    descripcion:
+      "Realizamos limpiezas profundas para eliminar cualquier residuo acumulado y mantener tu piscina en las mejores condiciones.",
+    icono: "fa-broom",
+  },
 };
 
 // testimonios
@@ -214,25 +235,46 @@ const testimonios = {
 
 // Render cards Services
 
-const serviciosContainer = document.getElementById("serviciosContainer");
+document.addEventListener("DOMContentLoaded", () => {
+  const serviciosContainer = document.getElementById("serviciosContainer");
 
-Object.keys(servicios).forEach((servicio) => {
-  const servicioCard = document.createElement("div");
-  servicioCard.classList.add("servicio-card");
+  function createServiceCard(servicio, { nombre, descripcion, icono }) {
+    const servicioCard = document.createElement("div");
+    servicioCard.classList.add("servicio-card");
 
-  const icono = document.createElement("i");
-  icono.classList.add("fa", servicios[servicio].icono);
+    const iconoElement = document.createElement("i");
+    iconoElement.classList.add("fa", icono);
 
-  const nombre = document.createElement("h3");
-  nombre.textContent = servicios[servicio].nombre;
+    const nombreElement = document.createElement("h3");
+    nombreElement.textContent = nombre;
 
-  const descripcion = document.createElement("p");
-  descripcion.textContent = servicios[servicio].descripcion;
+    const descripcionElement = document.createElement("p");
+    descripcionElement.textContent = descripcion;
 
-  servicioCard.appendChild(icono);
-  servicioCard.appendChild(nombre);
+    servicioCard.appendChild(iconoElement);
+    servicioCard.appendChild(nombreElement);
+    servicioCard.appendChild(descripcionElement);
 
-  serviciosContainer.appendChild(servicioCard);
+    return servicioCard;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  Object.keys(servicios).forEach((servicio) => {
+    const servicioCard = createServiceCard(servicio, servicios[servicio]);
+    serviciosContainer.appendChild(servicioCard);
+    observer.observe(servicioCard);
+  });
 });
 
 // Render cards Gallery
@@ -244,9 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const caption = document.getElementById("caption");
   const closeModal = document.querySelector(".close");
 
-  Object.keys(fotos).forEach((key) => {
-    const { nombre, url } = fotos[key];
-
+  function createGalleryItem(key, { nombre, url }) {
     const galleryItem = document.createElement("div");
     galleryItem.className = "gallery-item";
 
@@ -267,7 +307,25 @@ document.addEventListener("DOMContentLoaded", () => {
     galleryItem.appendChild(image);
     galleryItem.appendChild(captionDiv);
 
+    return galleryItem;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+
+  Object.keys(fotos).forEach((key) => {
+    const galleryItem = createGalleryItem(key, fotos[key]);
     galleryContainer.appendChild(galleryItem);
+    observer.observe(galleryItem);
   });
 
   closeModal.addEventListener("click", () => {
